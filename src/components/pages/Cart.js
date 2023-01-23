@@ -14,9 +14,8 @@ function Cart() {
   const data = location.state.data;
   const addItemToCart = useCartStore((s) => s.addItem);
   const navigate = useNavigate();
- 
-  
-  
+
+  // toast message pop css
   const notifyAddedItem = () => toast(itemAddedmsg,{
     position: "top-center",
     autoClose: 5000,
@@ -26,25 +25,26 @@ function Cart() {
     draggable: true,
     progress: undefined,
   });
-
+// toast massage
   const itemAddedmsg = ({ closeToast }) => (
   <div>
     <p className="text-[15px]">{data.title}: Added To Cart</p>
   </div>
   )
   
+  // data find index
   useEffect(()=>{
     if(productdata.findIndex((e)=> e.id === data.id)!== -1){
       setisAddedToCart(true)
     }
-  },[]);
+  },[data.id, productdata]);
     return (
     <>
    <header className="text-gray-600 body-font">
   <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
       <h4 className="ml-3 text-xl">E-G Shopping</h4>
     <nav className="md:mr-auto md:ml-4 md:py-1 md:pl-4 md:border-l md:border-gray-400	flex flex-wrap items-center text-base justify-center">
-      <a className="mr-5 hover:text-gray-900" onClick={()=>{navigate("/Cart")}}>Home</a>
+      <button className="mr-5 hover:text-gray-900" onClick={()=>{navigate("/")}}>Home</button>
     </nav>
 
     <button  className="inline-flex items-center bg-gray-200 border-0 py-1 px-3 focus:outline-none hover:bg-gray-300 rounded text-2xl mt-4 md:mt-0" onClick={()=>{navigate("/Wishlist")}}>
@@ -71,7 +71,7 @@ function Cart() {
         </div>
         <p className="leading-relaxed">{data.description}</p>
         <div className="flex mt-6 items-center pb-5 border-b-2 border-gray-100 mb-5">
-         
+      
           <div className="flex ml-6 items-center">
             <div className="relative">
             </div>
@@ -79,7 +79,6 @@ function Cart() {
         </div>
         <div className="flex">
           <span className="title-font font-medium text-2xl text-gray-900">₹{data.price}</span>
-
 
  <button className="flex ml-auto text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded" 
  onClick={()=>{

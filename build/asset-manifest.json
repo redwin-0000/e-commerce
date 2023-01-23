@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/static/css/main.2ce4cc26.css",
+    "main.js": "/static/js/main.f71e9e06.js",
+    "static/media/fashion1.jpg": "/static/media/fashion1.14719bddcb57de2435fe.jpg",
+    "static/media/fashion2.jpg": "/static/media/fashion2.191c1721a2cbb6470ca9.jpg",
+    "static/media/msFashion.png": "/static/media/msFashion.d800b9a3c0c23c1bc4e5.png",
+    "index.html": "/index.html",
+    "main.2ce4cc26.css.map": "/static/css/main.2ce4cc26.css.map",
+    "main.f71e9e06.js.map": "/static/js/main.f71e9e06.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.2ce4cc26.css",
+    "static/js/main.f71e9e06.js"
+  ]
+}

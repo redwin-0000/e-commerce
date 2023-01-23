@@ -1,21 +1,18 @@
-import React,{ useState}  from 'react';
+import React,{ useEffect, useState}  from 'react';
 
 import { useNavigate } from "react-router-dom";
 import useDataStore from "../store/data.store";
 
-// import WishList from './WishList';
 
 function MainSection2() {
 const [active, setIsActive] = useState(false);
-// const [like, setLike] = useState(null);
-// const [clicked, setClicked] = useState(false);
+
 const data = useDataStore((state) => state.data);
 const navigate = useNavigate();
 
-function PopUp(){
-  // window.location.href = '/Pop';
-  setIsActive(!active);
-}
+useEffect(()=>{
+  setIsActive("green");
+},[])
   return (
     <>
     <div className="flex flex-col text-center w-full mb-20">

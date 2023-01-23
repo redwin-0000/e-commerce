@@ -4,6 +4,7 @@ import { persist } from "zustand/middleware";
 const CartStore = (set) => ({
   cart: [],
   totalPrice: 0,
+
   addItem: (d) => {
     set((state) => ({
       cart: [d, ...state.cart],
@@ -12,7 +13,7 @@ const CartStore = (set) => ({
   },
   removeItem: (d) => {
     set((state) => ({
-      cart: state.cart.filter((e) => e.id != d.id),
+      cart: state.cart.filter((e) => e.id !== d.id),
       totalPrice: Math.round(state.totalPrice - Number(d.price)),
     }));
   },
